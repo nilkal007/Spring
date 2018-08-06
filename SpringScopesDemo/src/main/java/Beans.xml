@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="Pid" class="com.scp.Spring_desktop.Product" >
+		<property name="id" value="1" />
+		<property name="name" value="software" />
+		<property name="price" value="100.0" />
+
+		<lookup-method bean="vender" name="createNewVendor" />
+	</bean>
+
+	<bean id="vender" class="com.scp.Spring_desktop.Vender"
+		scope="prototype">
+		<property name="id" value="1" />
+		<property name="name" value="software" />
+		<property name="address" value="pune" />
+	</bean>
+
+
+
+
+</beans>
